@@ -1,0 +1,44 @@
+body{
+	font-family: Arial;
+	color: #333333;
+}
+
+table{
+	border-collapse: collapse;
+}
+
+td{
+	border: 1px solid #ccc;
+	padding: 5px;
+}
+
+th{
+	background: #f7f7f7 none 0 0;
+	border: 1px solid #ccc;
+	padding: 5px;
+	text-align: left;
+	cursor: pointer;
+}
+
+.arrowDown{
+    background-image: url("/images/arrow-asc.png");
+    display: inline-block;
+    float: right;
+    height: 13px;
+    margin-left: 5px;
+    width: 13px;
+}
+
+.arrowUp{
+    background-image: url("/images/arrow-desc.png");
+    display: inline-block;
+    float: right;
+    height: 13px;
+    margin-left: 5px;
+    width: 13px;
+}
+
+
+tr.even{
+    background-color: #eee;
+}
