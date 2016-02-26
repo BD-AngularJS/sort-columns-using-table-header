@@ -11,7 +11,9 @@
 </head>
 <body>
 	<div data-ng-controller = "ngSortTableHeader">
-		Search: <input type="text" placeholder="Search" data-ng-model="searchText">
+		<input type="text" placeholder="Search By Number" data-ng-model="searchText.sNumber">
+		<input type="text" placeholder="Search By Version" data-ng-model="searchText.version">
+		<input type="text" placeholder="Search By Principal Investigator" data-ng-model="searchText.pInvestigator">
 		<br><br>
 		<table>
 			<thead>
@@ -24,7 +26,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr data-ng-repeat="protocol in protocols | orderBy:columnName:revSort | filter:searchText" data-ng-class="$even ? 'odd' : 'even'">
+				<tr data-ng-repeat="protocol in protocols | orderBy:columnName:revSort | filter:searchText:exactMatch" data-ng-class="$even ? 'odd' : 'even'">
 					<td>{{ protocol.sNumber | uppercase }}</td>
 					<td>{{ protocol.title }}</td>
 					<td>{{ protocol.version | lowercase }}</td>
