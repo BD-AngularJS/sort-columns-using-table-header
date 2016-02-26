@@ -11,6 +11,8 @@
 </head>
 <body>
 	<div data-ng-controller = "ngSortTableHeader">
+		Search: <input type="text" placeholder="Search" data-ng-model="searchText">
+		<br><br>
 		<table>
 			<thead>
 				<tr>
@@ -22,7 +24,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr data-ng-repeat="protocol in protocols | orderBy:columnName:revSort" data-ng-class="$even ? 'odd' : 'even'">
+				<tr data-ng-repeat="protocol in protocols | orderBy:columnName:revSort | filter:searchText" data-ng-class="$even ? 'odd' : 'even'">
 					<td>{{ protocol.sNumber | uppercase }}</td>
 					<td>{{ protocol.title }}</td>
 					<td>{{ protocol.version | lowercase }}</td>
